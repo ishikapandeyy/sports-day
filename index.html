@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Day Program</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #234e70;
+        }
+
+        button {
+            padding: 12px 20px;
+            background: #234e70;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        pre {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre-wrap;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sports Day Program</h1>
+    <p>Run the sports events and see the final team scores.</p>
+
+    <button onclick="location.reload()">Start Sports Day</button>
+
+    <pre id="output">Sports Day results will appear here.</pre>
+
+    <script>
+        const output = document.getElementById("output");
+
+        console.log = function (...args) {
+            output.textContent += "\n" + args.map(item =>
+                typeof item === "object"
+                    ? JSON.stringify(item, null, 2)
+                    : String(item)
+            ).join(" ");
+        };
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
